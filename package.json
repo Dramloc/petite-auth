@@ -1,0 +1,20 @@
+{
+  "name": "petite-auth",
+  "version": "1.0.0",
+  "description": "Tiny authentication for JavaScript frontends",
+  "main": "dist/petite-auth.js",
+  "author": "Antoine Colmard <a.colmard@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint src test",
+    "lint:fix": "eslint src test --fix",
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "microbundle": "^0.3.1"
+  }
+}
