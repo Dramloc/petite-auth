@@ -1,7 +1,11 @@
 {
   "name": "petite-auth",
   "version": "1.0.0",
-  "description": "Tiny authentication for JavaScript frontends",
+  "description": "Tiny OAuth2 client for your frontend.",
+  "keywords": [
+    "oauth2",
+    "oauth2-client"
+  ],
   "main": "dist/petite-auth.js",
   "author": "Antoine Colmard <a.colmard@gmail.com>",
   "license": "MIT",
