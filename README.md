@@ -1,6 +1,6 @@
 # petite-auth
 
-> :lock: Tiny (520b) JavaScript OAuth2 client
+> :lock: Tiny (520B) JavaScript OAuth2 client
 
 ## Installation
 
