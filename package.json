@@ -1,7 +1,7 @@
 {
   "name": "petite-auth",
   "version": "1.0.1",
-  "description": "Tiny OAuth2 client for your frontend.",
+  "description": "Tiny JavaScript OAuth2 client",
   "keywords": [
     "oauth2",
     "oauth2-client"
