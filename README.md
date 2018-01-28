@@ -1,6 +1,6 @@
 # petite-auth
 
-Tiny OAuth2 client for your frontend.
+> lock Tiny (520b) JavaScript OAuth2 client
 
 ## Installation
 
@@ -130,3 +130,7 @@ function getProfile() {
   }).then(response => response.json());
 }
 ```
+
+## License
+
+[MIT](https://oss.ninja/mit/dramloc)
