@@ -24,9 +24,9 @@ Redirect user to your OAuth2 provider authorize endpoint:
 import { authorize } from 'petite-auth';
 
 function login() {
-  authorize('<oauth2 provider authorize endpoint>', {
-    client_id: '<application oauth2 client_id>',
-    redirect_uri: '<application callback URL>',
+  authorize(process.env.AUTHORIZE_URL, {
+    client_id: process.env.CLIENT_ID,
+    redirect_uri: process.env.CALLBACK_URL,
     response_type: 'token id_token',
     scope: 'openid profile',
   });
@@ -79,9 +79,9 @@ Add your application `redirect_uri` to your client Allowed Callback URLs.
 import { authorize } from 'petite-auth';
 
 function login() {
-  authorize('https://<your auth0 domain>/authorize', {
-    client_id: '<auth0 client_id>',
-    redirect_uri: '<application callback URL>',
+  authorize(`https://${process.env.AUTH0_DOMAIN}/authorize`, {
+    client_id: process.env.AUTH0_CLIENT_ID,
+    redirect_uri: process.env.CALLBACK_URL,
     response_type: 'token id_token',
     scope: 'openid profile',
   });
@@ -92,7 +92,7 @@ If you specified `profile` scope, you can fetch user profile using the userprofi
 
 ```js
 function getProfile() {
-  return fetch('https://<your auth0 domain>/userinfo', {
+  return fetch(`https://${process.env.AUTH0_DOMAIN}/userinfo`, {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('access_token')}`
     }
@@ -100,7 +100,7 @@ function getProfile() {
 }
 ```
 
-### Google accounts
+### Google
 
 Create your application and OAuth keys on the [Google developer console](https://console.developers.google.com).
 
@@ -111,8 +111,8 @@ import { authorize } from 'petite-auth';
 
 function login() {
   authorize('https://accounts.google.com/o/oauth2/v2/auth', {
-    client_id: '<your google client_id>',
-    redirect_uri: '<application callback URL>',
+    client_id: process.env.GOOGLE_CLIENT_ID,
+    redirect_uri: process.env.CALLBACK_URL,
     response_type: 'token id_token',
     scope: 'openid profile',
   });
@@ -124,6 +124,35 @@ If you specified `profile` scope and enabled Google+ API in the [developer conso
 ```js
 function getProfile() {
   return fetch('https://www.googleapis.com/plus/v1/people/me', {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('access_token')}`
+    }
+  }).then(response => response.json());
+}
+```
+
+### Facebook
+
+Create your application in the [Facebook developer console](https://developers.facebook.com/apps). Add Facebook Login to it and add your application `redirect_uri` to the authorized callback URIs.
+
+```js
+import { authorize } from 'petite-auth';
+
+function login() {
+  authorize('https://www.facebook.com/v2.11/dialog/oauth', {
+    client_id: process.env.FACEBOOK_CLIENT_ID,
+    redirect_uri: process.env.CALLBACK_URL,
+    response_type: 'token',
+    scope: 'public_profile',
+  });
+}
+```
+
+You can fetch user's public profile using the access token:
+
+```js
+function getProfile() {
+  return fetch('https://graph.facebook.com/me?fields=id,name,picture', {
     headers: {
       Authorization: `Bearer ${localStorage.getItem('access_token')}`
     }
