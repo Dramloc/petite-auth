@@ -18,7 +18,7 @@ function authorize(url, options) {
 	options.state = randomCryptoString();
 	options.nonce = randomCryptoString();
 	localStorage.setItem(options.state, options.state);
-	location.href = `${url}?${stringify(options)}`;
+	location.assign(`${url}?${stringify(options)}`);
 }
 
 export default authorize;
