@@ -1,4 +1,3 @@
-import namespace from './namespace';
 import { stringify } from './qs';
 
 function randomCryptoString() {
@@ -8,17 +7,17 @@ function randomCryptoString() {
 }
 
 /**
- * @param {string} url - OAuth2 provider `authorize` url
- * @param {Object} options - OAuth2 authorization options.
- * @param {string} options.client_id -
- * @param {string} options.response_type -
- * @param {string} options.redirect_uri -
- * @param {string} options.scope -
+ * @param {string} url - OAuth2 provider `authorize` endpoint
+ * @param {Object} options - OAuth2 authorization options
+ * @param {string} options.client_id - OAuth2 client id
+ * @param {string} options.response_type - OAuth2 implicit flow response type (can be 'id_token', 'token' or both)
+ * @param {string} options.redirect_uri - Your application callback endpoint
+ * @param {string} options.scope - OAuth2 requested scopes
  */
 function authorize(url, options) {
 	options.state = randomCryptoString();
 	options.nonce = randomCryptoString();
-	localStorage.setItem(namespace + options.state, options.state);
+	localStorage.setItem(options.state, options.state);
 	location.href = `${url}?${stringify(options)}`;
 }
 
