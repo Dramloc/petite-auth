@@ -6,6 +6,8 @@
 
 > :lock: Tiny (433B) JavaScript OAuth2 client. Try it live [here](https://petite-auth.surge.sh/).
 
+This library implements OAuth2 _implicit grant_ flow (or client-side flow).
+
 ## Installation
 
 Install package from npm:
