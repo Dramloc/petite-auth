@@ -5,12 +5,13 @@ function stringify(query) {
 }
 
 function parse(qs) {
-	qs = qs.replace(/^#?\/?/, '');
-	return qs.split('&').reduce((parsed, keyValue) => {
-		const [key, value] = keyValue.split('=');
-		parsed[key] = decodeURIComponent(value);
-		return parsed;
-	}, {});
+	return qs.substring(1)
+		.split('&')
+		.reduce((parsed, keyValue) => {
+			const [key, value] = keyValue.split('=').map(decodeURIComponent);
+			parsed[key] = value;
+			return parsed;
+		}, {});
 }
 
 export {
