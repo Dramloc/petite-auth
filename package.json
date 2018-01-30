@@ -1,33 +1,39 @@
 {
-  "name": "petite-auth",
-  "version": "1.0.3",
-  "description": "Tiny JavaScript OAuth2 client",
-  "keywords": [
-    "oauth2",
-    "oauth2-client"
-  ],
-  "source": "src/index.js",
-  "module": "dist/petite-auth.es.js",
-  "main": "dist/petite-auth.js",
-  "umd:main": "dist/petite-auth.umd.js",
-  "repository": "dramloc/petite-auth",
-  "author": "Antoine Colmard <a.colmard@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "lint": "eslint src test",
-    "lint:fix": "eslint src test --fix",
-    "build": "microbundle",
-    "dev": "microbundle watch",
-    "test": "npm run -s lint && jest"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-jest": "^22.1.0",
-    "babel-preset-env": "^1.6.1",
-    "eslint": "^4.16.0",
-    "eslint-config-synacor": "^2.1.0",
-    "eslint-plugin-jest": "^21.7.0",
-    "jest": "^22.1.4",
-    "microbundle": "^0.4.3"
-  }
+	"name": "petite-auth",
+	"version": "1.0.3",
+	"description": "Tiny JavaScript OAuth2 client",
+	"keywords": [
+		"oauth2",
+		"oauth2-client"
+	],
+	"source": "src/index.js",
+	"module": "dist/petite-auth.es.js",
+	"main": "dist/petite-auth.js",
+	"umd:main": "dist/petite-auth.umd.js",
+	"repository": "dramloc/petite-auth",
+	"author": "Antoine Colmard <a.colmard@gmail.com>",
+	"license": "MIT",
+	"scripts": {
+		"lint": "eslint src test",
+		"lint:fix": "eslint src test --fix",
+		"build": "microbundle",
+		"dev": "microbundle watch",
+		"test": "npm run -s lint && jest"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.0",
+		"babel-jest": "^22.1.0",
+		"babel-preset-env": "^1.6.1",
+		"eslint": "^4.16.0",
+		"eslint-config-synacor": "^2.1.0",
+		"eslint-plugin-jest": "^21.7.0",
+		"jest": "^22.1.4",
+		"jest-localstorage-mock": "^2.2.0",
+		"microbundle": "^0.4.3"
+	},
+	"jest": {
+		"setupFiles": [
+			"jest-localstorage-mock"
+		]
+	}
 }
