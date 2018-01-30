@@ -2,11 +2,11 @@ import namespace from './namespace';
 import { stringify } from './qs';
 
 function generateState(length) {
-  const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._~';
-  const generator = crypto || msCrypto;
-  return Array.from(generator.getRandomValues(new Uint8Array(length)))
-    .map(random => charset[random % charset.length])
-    .join('');
+	const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._~';
+	const generator = crypto || msCrypto;
+	return Array.from(generator.getRandomValues(new Uint8Array(length)))
+		.map(random => charset[random % charset.length])
+		.join('');
 }
 
 /**
@@ -18,10 +18,10 @@ function generateState(length) {
  * @param {string} options.scope -
  */
 function authorize(url, options) {
-  options.state = generateState(32);
-  options.nonce = generateState(32);
-  localStorage.setItem(namespace + options.state, options.state);
-  location.href = `${url}?${stringify(options)}`;
+	options.state = generateState(32);
+	options.nonce = generateState(32);
+	localStorage.setItem(namespace + options.state, options.state);
+	location.href = `${url}?${stringify(options)}`;
 }
 
 export default authorize;
