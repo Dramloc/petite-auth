@@ -17,12 +17,17 @@
     "lint": "eslint src test",
     "lint:fix": "eslint src test --fix",
     "build": "microbundle",
-    "dev": "microbundle watch"
+    "dev": "microbundle watch",
+    "test": "jest"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^22.1.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.16.0",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "microbundle": "^0.3.1"
+    "eslint-config-synacor": "^2.1.0",
+    "eslint-plugin-jest": "^21.7.0",
+    "jest": "^22.1.4",
+    "microbundle": "^0.4.3"
   }
 }
