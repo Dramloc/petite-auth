@@ -1,4 +1,8 @@
-# petite-auth
+<p align="center">
+	<img alt="Petite · Auth logo" src="https://petite-auth.surge.sh/assets/icons/android-chrome-192x192.png" />
+</p>
+
+# Petite · Auth
 
 > :lock: Tiny (433B) JavaScript OAuth2 client
 
@@ -66,6 +70,12 @@ function logout() {
   localStorage.removeItem('expires_at');
 }
 ```
+
+## Framework integration
+
+### Preact
+
+You can use this [preact-cli template](https://github.com/Dramloc/preact-petite-auth-template) to quickly get started with petite-auth.
 
 ## Integration with OAuth2 providers
 
