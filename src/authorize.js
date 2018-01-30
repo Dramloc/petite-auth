@@ -1,11 +1,9 @@
 import namespace from './namespace';
 import { stringify } from './qs';
 
-function generateState(length) {
+function randomCryptoString() {
 	const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._~';
-	const generator = crypto || msCrypto;
-	return Array.from(generator.getRandomValues(new Uint8Array(length)))
-		.map(random => charset[random % charset.length])
+	return Array.from(crypto.getRandomValues(new Uint8Array(32)), random => charset[random % 65])
 		.join('');
 }
 
@@ -18,8 +16,8 @@ function generateState(length) {
  * @param {string} options.scope -
  */
 function authorize(url, options) {
-	options.state = generateState(32);
-	options.nonce = generateState(32);
+	options.state = randomCryptoString();
+	options.nonce = randomCryptoString();
 	localStorage.setItem(namespace + options.state, options.state);
 	location.href = `${url}?${stringify(options)}`;
 }
