@@ -1,6 +1,6 @@
 function stringify(query) {
-	return Object.keys(query)
-		.map(key => `${key}=${encodeURIComponent(query[key])}`)
+	return Object.entries(query)
+		.map(pair => pair.map(encodeURIComponent).join('='))
 		.join('&');
 }
 
