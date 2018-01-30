@@ -4,7 +4,7 @@
 
 # Petite · Auth
 
-> :lock: Tiny (433B) JavaScript OAuth2 client
+> :lock: Tiny (433B) JavaScript OAuth2 client. Try it live [here](https://petite-auth.surge.sh/).
 
 ## Installation
 
