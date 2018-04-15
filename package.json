@@ -10,6 +10,11 @@
 	"module": "dist/petite-auth.es.js",
 	"main": "dist/petite-auth.js",
 	"umd:main": "dist/petite-auth.umd.js",
+	"types": "src/petite-auth.d.ts",
+	"files": [
+		"src",
+		"dist"
+	],
 	"repository": "dramloc/petite-auth",
 	"author": "Antoine Colmard <a.colmard@gmail.com>",
 	"license": "MIT",
