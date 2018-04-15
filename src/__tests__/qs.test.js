@@ -1,4 +1,4 @@
-import { stringify, parse } from '../src/qs';
+import { stringify, parse } from '../qs';
 
 test('qs.stringify returns encoded parameters', () => {
 	expect(

@@ -1,3 +1,9 @@
 {
-  "extends": "eslint-config-synacor"
+	"extends": [
+		"plugin:jest/recommended",
+		"synacor"
+	],
+	"plugins": [
+		"jest"
+	]
 }

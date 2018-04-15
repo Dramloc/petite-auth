@@ -1,4 +1,4 @@
-import authorize from '../src/authorize';
+import authorize from '../authorize';
 
 test('authorize should redirect user to authorize endpoint', () => {
 	const authorizeUrl = 'https://oauth2.endpoint/authorize';

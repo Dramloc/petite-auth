@@ -35,8 +35,8 @@
 	"jest": {
 		"setupFiles": [
 			"jest-localstorage-mock",
-			"./test/__setups__/crypto",
-			"./test/__setups__/location"
+			"./src/__mocks__/crypto",
+			"./src/__mocks__/location"
 		]
 	}
 }

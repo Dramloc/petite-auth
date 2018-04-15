@@ -1,4 +1,4 @@
-import parseHash from '../src/parse-hash';
+import parseHash from '../parse-hash';
 
 test('parseHash should return the parsed hash if valid', () => {
 	const accessToken = 'bTpuxmdPJE5ylKKUWigcVVhBATfwoM_c';
