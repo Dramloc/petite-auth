@@ -1,6 +1,6 @@
 {
 	"name": "petite-auth",
-	"version": "1.0.4",
+	"version": "1.1.0",
 	"description": "Tiny JavaScript OAuth2 client",
 	"keywords": [
 		"oauth2",
