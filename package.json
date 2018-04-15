@@ -14,6 +14,7 @@
 	"author": "Antoine Colmard <a.colmard@gmail.com>",
 	"license": "MIT",
 	"scripts": {
+		"prepublish": "npm run build && npm test",
 		"lint": "eslint src test",
 		"lint:fix": "eslint src test --fix",
 		"build": "microbundle",
