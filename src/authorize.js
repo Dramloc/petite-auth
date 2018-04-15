@@ -1,10 +1,5 @@
 import { stringify } from './qs';
-
-function randomCryptoString() {
-	const charset = '0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._~';
-	return Array.from(crypto.getRandomValues(new Uint8Array(32)), random => charset[random % 65])
-		.join('');
-}
+import { randomCryptoString } from './random-crypto-string';
 
 /**
  * @param {string} url - OAuth2 provider `authorize` endpoint
@@ -14,11 +9,9 @@ function randomCryptoString() {
  * @param {string} options.redirect_uri - Your application callback endpoint
  * @param {string} options.scope - OAuth2 requested scopes
  */
-function authorize(url, options) {
+export default function authorize(url, options) {
 	options.state = randomCryptoString();
 	options.nonce = randomCryptoString();
 	localStorage.setItem(options.state, options.state);
 	location.assign(`${url}?${stringify(options)}`);
 }
-
-export default authorize;

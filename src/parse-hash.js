@@ -1,6 +1,6 @@
 import { parse } from './qs';
 
-function parseHash() {
+export default function parseHash() {
 	const parsedHash = parse(location.hash);
 	const { state } = parsedHash;
 	const storedState = localStorage.getItem(state);
@@ -10,5 +10,3 @@ function parseHash() {
 	}
 	return parsedHash;
 }
-
-export default parseHash;

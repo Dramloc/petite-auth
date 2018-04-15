@@ -1,20 +1,15 @@
-function stringify(query) {
-	return Object.entries(query)
-		.map(pair => pair.map(encodeURIComponent).join('='))
+export function stringify(params) {
+	return Object.keys(params)
+		.map(key => [key, params[key]].map(encodeURIComponent).join('='))
 		.join('&');
 }
 
-function parse(qs) {
-	return qs.substring(1)
+export function parse(queryString) {
+	return queryString.substring(1)
 		.split('&')
-		.reduce((parsed, keyValue) => {
+		.reduce((params, keyValue) => {
 			const [key, value] = keyValue.split('=').map(decodeURIComponent);
-			parsed[key] = value;
-			return parsed;
+			params[key] = value;
+			return params;
 		}, {});
 }
-
-export {
-	stringify,
-	parse
-};
